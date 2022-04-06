@@ -16,7 +16,7 @@ use App\Http\Controllers\Act05;
 */
 //Hompage
 Route::get('/home', function () {
-    return view('Home');
+    return view('name');
 });
 
 //activity 1 routing name
@@ -34,7 +34,6 @@ route::redirect('exercise2', '/name');
 
 //direct routes with naming
 Route::get('act02' , [Act::class , 'activity2'])->name('act02');
-
 
 
 //activity3 using required parameter:Create routes that will display your Name,id and address.
@@ -58,8 +57,8 @@ Route:: get('/act4/{name?}/{id?}/{address?}' , function ($name=null, $id=null, $
 
  //act 5
 Route:: get('/', [Act05::class, 'index']);
-Route::get('/activity05.Item/{item?}', [Act05::class, 'Item'])->name('Item');
-Route::get('activity05/Customer', [Act05::class, 'Customer'])->name('Customer');
-Route::get('activity05.Order_details', [Act05::class, 'Order_details'])->name('Order_details');
-Route::get('activity05.Order/{CustomerID?}/{Name?}/{Ordernumber?}',[Act05::class, 'Order'])->name('Order');
+Route::get('/activity05.Item/{ItemNo?}/{Name?}/{Price?}', [Act05::class, 'Item'])->name('Item');
+Route::get('activity05.Customer/{Customer?}/{Name?}/{Address?}', [Act05::class, 'Customer'])->name('Customer');
+Route::get('activity05.Order_details/{Transpo?}/{Orderno?}/{Itemid?}/{Name?}/{Price?}/{Qty?}/', [Act05::class, 'Order_details'])->name('Order_details');
+Route::get('activity05.Order/{CustomerID?}/{Name?}/{Ordernumber?}/{Date?}',[Act05::class, 'Order'])->name('Order');
 

@@ -4,16 +4,20 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500");
+    background-image: url("https://wallpaperaccess.com/full/296758.jpg");
     background-repeat: no-repeat;
-    background-size: 1600px 800px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    animation: change 20s infinite alternate ease-in;
 }
 header{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-image:url("https://toppng.com/uploads/preview/green-background-texture-11553957950q8wcyypxim.jpg");
-    border-bottom: 2px outset white;
+    background-image:url("https://media.istockphoto.com/photos/white-abstract-background-picture-id1152846618?b=1&amp;k=20&amp;m=1152846618&amp;s=170667a&amp;w=0&amp;h=JzYcLMUdshntUt_OSsEYFZpa-qmT1fZjA0a1IDBWMmE=");
+    border-bottom: 2px outset black;
 }
 ul{
     margin:12px 0px;
@@ -22,11 +26,11 @@ ul{
     gap: 1em;
 }
 ul li{
-    background-color:	rgb(34,139,34,.8);
+    background-color: rgba(189, 195, 199,.7);
     border-radius: 5px;
     border: 2px outset rgb(0,100,0);
     list-style: none;
-    background-image: linear-gradient(90deg,#228B22,rgb(0,100,0));
+    background-image: linear-gradient(180deg,black,white);
     background-size:0% 1.5px;
     background-repeat: no-repeat;
     background-position: left bottom ;
@@ -46,20 +50,21 @@ ul li:hover{
     background-color: #fff;
     transform: scale(1.1);
     border-radius: 5px;
-    box-shadow: 0 0 3px black,0 0 5px rgb(34,139,34);
+    box-shadow: 0 0 3px gray,0 0 9px black;
 }
 ul li a:hover{
     color:black;
 }
 
 p{
+    color: white;
     text-align: center;
     font-size: 3em;
     font-weight: 700;
     margin-top:20px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px white;
+    animation: text 4s ease-in-out alternate infinite;
 }
 .container{
     display:flex;
@@ -71,6 +76,7 @@ p{
 .container .img label {
     font-size: 2em;
     padding:5px;
+    color: white;
     text-transform: uppercase;
 }
 .container .img{
@@ -78,7 +84,66 @@ p{
     margin-right:5px;
 }
 .container .img img{
+    border-radius: 50%;
     box-shadow: 0 0 5px blue,0 0 10px yellow;
-    width:200px;
-    height:200px;
+    width:300px;
+    height:300px;
+    transition: 300ms; 
+    animation: animate 4s ease-in-out alternate infinite;
 }
+@keyframes animate {
+    0%{
+        background-image: linear-gradient(90deg,blue,yellow);
+        box-shadow: 0 0 5px blue,0 0 10px yellow;
+        transform:rotateY(0deg);
+    }
+    50%{
+        transform:rotateY(90deg);
+    }
+    100%{
+        background-image: linear-gradient(180deg,blue,yellow);
+        box-shadow: 0 0 5px blue,0 0 10px yellow;
+        transform:rotateY(180deg);
+    }
+}
+@keyframes text {
+    0%{
+        text-shadow: 0px 0px 10px blue;
+    }
+    100%{
+        text-shadow: 1px 1px 25px yellow;
+    }
+}
+@keyframes change {
+    0%{
+        background-image:url("https://wallpaperaccess.com/full/334698.jpg" );
+     }
+     20%{
+        background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Dark-Backgrounds.jpg");
+     }
+     30%{
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/1023/370/544/dark-landscape-lake-hd-wallpaper-preview.jpg");
+     }
+    40%{
+        background-image: url("https://wallpapercave.com/wp/spKn1YF.jpg");
+     }
+     50%{
+        background-image: url("https://img.peapix.com/d67f9af2a8b54adb9e176fafa3b633d7_480.jpg");
+     }
+     60%{
+        background-image: url("https://images.hdqwalls.com/wallpapers/river-stream-dark-4k-yy.jpg");
+     }
+     70%{
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/756/589/149/5bd28f65d4968-wallpaper-preview.jpg");
+     }
+     80%{
+        background-image: url("https://wallup.net/wp-content/uploads/2017/03/16/216462-road-sunset-stars-long_exposure.jpg");
+     }
+     90%{
+        background-image: url("https://wallpaperaccess.com/full/2859322.jpg");
+     }
+     100%{
+        background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/road-starry-sky-night-trees-marking-4k_1540575777.jpg");
+     }
+}
+

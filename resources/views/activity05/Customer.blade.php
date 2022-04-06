@@ -2,23 +2,36 @@
 @section('title' , 'Costumer')
 @section('content')
 <link rel="stylesheet" href="{{ url('css/act5.css') }}">
-<p> Hi Customers! </p>
+<div class="background">
+@if(isset($Customerid) || isset($Name)|| isset($Address))
+<p> Hi <br>My name is {{ $Name }} !!!</p>
 <div class="container">
+    @if($Name == "crisyan")
     <div class="img">
-        <img src="/Customer/crisyan.jpeg" alt="Crisyan">
-        <label for="">Crisyan</label>
+    <img src="/Customer/crisyan.jpeg" alt="Crisyan">
     </div>
-    <div class="img">
-        <img src="/Customer/Jericka.jpeg" alt="Crisyan">
-        <label for="">Jericka</label>
-    </div>
-    <div class="img">
-        <img src="/Customer/Marj.jpg" alt="Crisyan">
-        <label for="">Marjelvin</label>
-    </div>
-    <div class="img">
-        <img src="/Customer/Emman.jpg" alt="Crisyan">
-        <label for="">Emmanuel</label>
-    </div>
+@endif
+@if($Name == "jericka")
+<div class="img">
+    <img src="/Customer/Jericka.jpeg" alt="Crisyan">
 </div>
+@endif
+@if($Name == "marjelvin")
+<div class="img">
+    <img src="/Customer/Marj.jpg" alt="Crisyan">
+</div>
+@endif
+@if($Name== "emman")
+<div class="img">
+    <img src="/Customer/Emman.jpg" alt="Crisyan">
+</div>
+@endif
+</div>
+<p>Customer ID:{{ $Customerid }}</p> 
+<p>Address:{{ $Address }}</p>
+@else <p>Customer</p><br><p>{{ $text }}</p> <br>
+<P>3 required parameters</P>
+<p>Customerid/Name/Address</p>
+@endif
 @endsection
+<div>

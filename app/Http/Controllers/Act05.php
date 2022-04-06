@@ -14,18 +14,24 @@ class Act05 extends Controller
     public function index(){
         return view('activity05.header');
     }
-    public function Customer(){
-      return view ('activity05.Customer');
-    }
-    public function Item($item){
-      return view('activity05.Item' , ['sample' => $item]);
-    }
-    public function Order_details(){
-      return view ('activity05.Order_details');
-    }
-    public function Order($Customerid=null , $Name=null , $order_no=null){
+    public function Customer($Customerid=null , $Name=null ,$Address=null ){
       $text = "Please Input in url";
-        return view ('activity05.Order', ['Customerid' => $Customerid, 'Name' => $Name, 'Order' => $order_no,'text' => $text]);
+      return view ('activity05.Customer', ['Customerid' => $Customerid, 'Name' => $Name, 'Address' => $Address,'text' => $text]);
+    }
+    public function Item($Itemno=null, $Name=null , $Price=null){
+      $text = "Please Input in url";
+      return view ('activity05.Item', ['Itemno' => $Itemno, 'Name' => $Name, 'Price' => $Price,'text' => $text]);
+    }
+    public function Order_details($Name=null,$TransNo=null, $Orderno=null , $Itemid=null, $Qty=null , $Price=null ){
+      $text = "Please Input in url";
+      $total = (float)$Price * (float)$Qty;
+      return view ('activity05.Order_details', 
+      ['TransNo' => $TransNo, 'Orderno' => $Orderno, 'Itemid' => $Itemid,
+      'Name' => $Name, 'Price' => $Price, 'Qty' => $Qty, 'total' => $total, 'text' => $text]);
+    }
+    public function Order($Customerid=null , $Name=null , $order_no=null , $Date=null){
+      $text = "Please Input in url";
+        return view ('activity05.Order', ['Customerid' => $Customerid, 'Name' => $Name, 'Order' => $order_no, 'Date' => $Date,'text' => $text]);
 
     }
 
